@@ -13,11 +13,12 @@ private:
 public:
     void getApartmentInfo(); //function to show information about specific apartment
     Apartment();
-    Apartment(std::string hotelName);
-    Apartment(std::string hotelName, std::string typeOfApartment);
-    Apartment(std::string hotelName,std::string typeOfApartment,int apartmentNumber);
-    Apartment(std::string hotelName,std::string typeOfApartment,int apartmentNumber,int numberOfRooms);
-    Apartment(std::string hotelName,std::string typeOfApartment,int apartmentNumber,int numberOfRooms,int price);
+    Apartment(const std::string &hotelName);
+    Apartment(const std::string &hotelName, const std::string &typeOfApartment);
+    Apartment(const std::string &hotelName, const std::string &typeOfApartment,int apartmentNumber);
+    Apartment(const std::string &hotelName, const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms);
+    Apartment(const std::string &hotelName, const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms,int price);
+    ~Apartment();
 };
 
 

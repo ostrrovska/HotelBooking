@@ -1,14 +1,23 @@
 #include "Apartment.h"
+#include <iostream>
 
+void Apartment::getApartmentInfo() {
+    std::cout << hotelName
+    << typeOfApartment
+    << apartmentNumber
+    << numberOfRooms
+    << price;
+}
 Apartment::Apartment()
-        :{"None","None",0,0,0}{}
-Apartment::Apartment(std::string hotelName)
-        :{newName, "None",0,0,0}{}
-Apartment::Apartment(std::string hotelName, std::string typeOfApartment)
-        :{newName, newType, 0,0,0} {}
-Apartment::Apartment(std::string hotelName, std::string typeOfApartment,int apartmentNumber){}
-        :{newName, newType, newApartmentNumber,0,0} {}
-Apartment::Apartment(std::string hotelName, std::string typeOfApartment,int apartmentNumber,int numberOfRooms){}
-        :{newName, newType, newApartmentNumber,newNumberOfRooms,0} {}
-Apartment::Apartment(std::string hotelName, std::string typeOfApartment,int apartmentNumber,int numberOfRooms, int price){}
-        :{newName, newType, newApartmentNumber,newNumberOfRooms,newPrice} {}
+        : Apartment{"None","None",0,0,0}{}
+Apartment::Apartment(const std::string &hotelName)
+        :Apartment{hotelName, "None",0,0,0}{}
+Apartment::Apartment(const std::string &hotelName, const std::string &typeOfApartment)
+        :Apartment{hotelName, typeOfApartment, 0,0,0} {}
+Apartment::Apartment(const std::string &hotelName, const std::string &typeOfApartment, int apartmentNumber)
+: Apartment{hotelName, typeOfApartment, apartmentNumber,0,0}{}
+Apartment::Apartment(const std::string &hotelName, const std::string &typeOfApartment, int apartmentNumber, int numberOfRooms)
+:Apartment{hotelName, typeOfApartment, apartmentNumber, numberOfRooms,0}{}
+Apartment::Apartment(const std::string &hotelName, const std::string &typeOfApartment, int apartmentNumber, int numberOfRooms, int price)
+:hotelName{hotelName}, typeOfApartment{typeOfApartment}, apartmentNumber{apartmentNumber}, numberOfRooms{numberOfRooms}, price{price}{}
+
