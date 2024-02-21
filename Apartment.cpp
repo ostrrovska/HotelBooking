@@ -20,4 +20,5 @@ Apartment::Apartment(const std::string &hotelName, const std::string &typeOfApar
 :Apartment{hotelName, typeOfApartment, apartmentNumber, numberOfRooms,0}{}
 Apartment::Apartment(const std::string &hotelName, const std::string &typeOfApartment, int apartmentNumber, int numberOfRooms, int price)
 :hotelName{hotelName}, typeOfApartment{typeOfApartment}, apartmentNumber{apartmentNumber}, numberOfRooms{numberOfRooms}, price{price}{}//initialisation list
+Apartment::~Apartment(){}
 

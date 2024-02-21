@@ -5,6 +5,7 @@
 #ifndef RESTAURANTBOOKING_CUSTOMER_H
 #define RESTAURANTBOOKING_CUSTOMER_H
 #include <string>
+#include <vector>
 
 class Customer {
 private:
@@ -13,7 +14,9 @@ private:
     int age;
     std::string phoneNumber;
 public:
+    Customer findCustomerByID(std::vector<Customer> &customers,int customerID);
     Customer(std::string &&customerName = "None", int customerID = 0, int age = 0, std::string &&phoneNumber = "None"); //constructor by default
+    ~Customer();
 };
 
 
