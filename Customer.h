@@ -11,9 +11,11 @@ private:
     std::string customerName;
     int customerID;
     int age;
-    int phoneNumber;
+    std::string phoneNumber;
 public:
+    Customer(std::string &&customerName = "None", int customerID = 0, int age = 0, std::string &&phoneNumber = "None"); //constructor by default
 };
+
 
 
 #endif //RESTAURANTBOOKING_CUSTOMER_H

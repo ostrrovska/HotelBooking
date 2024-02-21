@@ -1,5 +1,4 @@
-//
-// Created by ACER on 21.02.2024.
-//
-
 #include "Customer.h"
+
+Customer::Customer(std::string &&customerName, int customerID, int age, std::string &&phoneNumber)
+    : customerName{customerName},customerID{customerID}, age{age},phoneNumber{phoneNumber}{}
