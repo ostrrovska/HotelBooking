@@ -34,3 +34,8 @@
 # IDE and build system specific directories
 .idea
 cmake-build-debug
+
+*.json
+*.txt
+*.ninja
+*.log

@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(RestaurantBooking main.cpp
         Apartment.cpp
-        Apartment.h)
+        Apartment.h
+        Customer.cpp
+        Customer.h)
