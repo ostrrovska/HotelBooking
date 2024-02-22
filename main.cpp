@@ -16,5 +16,9 @@ int main() {
     Customer customer2("Maria",205677,17,"+380675554342");
     Customer customer3("Nazar",690087,18,"+380985674462");
 
+    Booking booking1(customer1,"13.02.2024","18.02.2024");
+    Booking booking2(customer2,"26.02.2024","01.03.2024");
+    Booking booking3(customer3,"15.03.2023","20.03.2024");
+
 
 }
