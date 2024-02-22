@@ -2,10 +2,10 @@
 #include <iostream>
 
 void Apartment::getApartmentInfo() {
-    std::cout << typeOfApartment
-    << apartmentNumber
-    << numberOfRooms
-    << price;
+    std::cout << "Type of apartment: " << typeOfApartment<<std::endl
+    <<"Number: " << apartmentNumber<<std::endl
+    <<"Number of rooms: " << numberOfRooms<<std::endl
+    <<"Price: " << price<<std::endl;
 }
 Apartment::Apartment()
         : Apartment{"None", 0, 0, 0} {} //делегування

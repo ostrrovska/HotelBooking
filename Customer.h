@@ -14,7 +14,8 @@ private:
     int age;
     std::string phoneNumber;
 public:
-    Customer findCustomerByID(std::vector<Customer> &customers,int customerID);
+    int getID();
+    std::string getName();
     Customer(std::string &&customerName = "None", int customerID = 0, int age = 0, std::string &&phoneNumber = "None"); //constructor by default
     ~Customer();
 };

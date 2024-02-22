@@ -9,7 +9,7 @@ private:
     std::string dateOfArrival;
     std::string dateOfDeparture;
 public:
-    Booking( Customer customer = Customer(), std::string &&dateOfArrival = "None", std::string &&dateOfDeparture = "None");
+    Booking( const Customer& customer = Customer(), std::string &&dateOfArrival = "None", std::string &&dateOfDeparture = "None");
     ~Booking();
 };
 
