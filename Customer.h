@@ -9,13 +9,11 @@
 
 class Customer {
 private:
-    std::string customerName;
-    int customerID;
     int age;
     std::string phoneNumber;
 public:
-    int getID();
-    std::string getName();
+    std::string customerName;
+    int customerID;
     Customer(std::string &&customerName = "None", int customerID = 0, int age = 0, std::string &&phoneNumber = "None"); //constructor by default
     ~Customer();
 };

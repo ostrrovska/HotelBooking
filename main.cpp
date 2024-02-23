@@ -7,10 +7,10 @@ using namespace std;
 void findCustomerByID(std::vector<Customer> &customers, int customerID) {
     bool isFound = false;
     for(int i = 0; i < customers.size(); i++){
-        if(customers[i].getID() == customerID)
+        if(customers[i].customerID == customerID)
         {
             isFound = true;
-            cout << customers[i].getName();
+            cout << customers[i].customerName;
         }
     }
     if(!isFound) cout <<"Invalid ID"<<endl;
@@ -28,6 +28,9 @@ int main() {
     Customer customer2("Maria",205677,17,"+380675554342");
     Customer customer3("Nazar",690087,18,"+380985674462");
     customers.emplace_back(customer1);
+    customers.emplace_back(customer2);
+    customers.emplace_back(customer3);
+
     string idToFind;
     getline(cin,idToFind);
     findCustomerByID(customers, stoi(idToFind));

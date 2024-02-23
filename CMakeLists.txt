@@ -7,4 +7,6 @@ add_executable(RestaurantBooking main.cpp
         Apartment.cpp
         Apartment.h
         Customer.cpp
-        Customer.h)
+        Customer.h
+        Booking.cpp
+        Booking.h)
