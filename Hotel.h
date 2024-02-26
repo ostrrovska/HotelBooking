@@ -7,11 +7,16 @@
 #include <string>
 
 class Hotel {
-public:
+private:
     std::string hotelName;
     int numberOfApartments;
     std::string ranking;
-private:
+public:
+    static int numberOfHotels;
+    //оголошення конструктору
+    Hotel();
+    Hotel(const std::string &name, int apartments, const std::string &rank);
+   ~Hotel();
     int showApartments();
 
 };

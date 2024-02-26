@@ -35,7 +35,9 @@ int main() {
     getline(cin,idToFind);
     findCustomerByID(customers, stoi(idToFind));
 
-    Booking booking1(customer1,"13.02.2024","18.02.2024");
-    Booking booking2(customer2,"26.02.2024","01.03.2024");
-    Booking booking3(customer3,"15.03.2023","20.03.2024");
+    Booking booking1(&customer1,"13.02.2024","18.02.2024");
+    Booking booking2(&customer2,"26.02.2024","01.03.2024");
+    Booking booking3(&customer3,"15.03.2023","20.03.2024");
+
+    return 0;
 }
