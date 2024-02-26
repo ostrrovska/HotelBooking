@@ -15,7 +15,11 @@ public:
     std::string customerName;
     int customerID;
     Customer(std::string &&customerName = "None", int customerID = 0, int age = 0, std::string &&phoneNumber = "None"); //constructor by default
+    //конструктор копіювання
+    Customer(const Customer &other);
     ~Customer();
+
+
 };
 
 
