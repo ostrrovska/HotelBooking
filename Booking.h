@@ -5,13 +5,12 @@
 
 class Booking {
 private:
-    Customer customer;
-    std::string dateOfArrival;
-    std::string dateOfDeparture;
+    Customer *customer;
+    std::string *dateOfArrival;
+    std::string *dateOfDeparture;
 public:
     //move constructor
-    Booking( const Customer& customer = Customer(), std::string &&dateOfArrival = "None", std::string &&dateOfDeparture = "None") noexcept;
-
+    Booking(Booking &&other) noexcept;
     ~Booking();
 };
 

@@ -2,11 +2,12 @@
 #include <iostream>
 
 void Apartment::getApartmentInfo() {
-    std::cout << "Type of apartment: " << typeOfApartment<<std::endl
-    <<"Number: " << apartmentNumber<<std::endl
-    <<"Number of rooms: " << numberOfRooms<<std::endl
-    <<"Price: " << price<<std::endl;
+    std::cout << "Type of apartment: " << typeOfApartment << std::endl
+              << "Number: " << apartmentNumber << std::endl
+              << "Number of rooms: " << numberOfRooms << std::endl
+              << "Price: " << price << std::endl;
 }
+
 Apartment::Apartment()
         : Apartment{"None", 0, 0, 0} {} //делегування
 Apartment::Apartment(const std::string &typeOfApartment)
@@ -17,6 +18,6 @@ Apartment::Apartment(const std::string &typeOfApartment, int apartmentNumber, in
         : Apartment{typeOfApartment, apartmentNumber, numberOfRooms, 0} {}
 Apartment::Apartment(const std::string &typeOfApartment, int apartmentNumber, int numberOfRooms, int price)
         : typeOfApartment{typeOfApartment}, apartmentNumber{apartmentNumber}, numberOfRooms{numberOfRooms}, price{price} {} // ініціалізація членів класу
-Apartment::~Apartment() {}
+Apartment::~Apartment() {std::cout << "Destructor called for apartment: " << this->apartmentNumber << std::endl;}//використання this
 
 

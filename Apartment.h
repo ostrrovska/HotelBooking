@@ -17,6 +17,8 @@ public:
     Apartment(const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms);
     Apartment(const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms,int price);
     ~Apartment();
+
+
 };
 
 
