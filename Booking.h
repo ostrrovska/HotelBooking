@@ -9,7 +9,9 @@ private:
     std::string dateOfArrival;
     std::string dateOfDeparture;
 public:
-    Booking( const Customer& customer = Customer(), std::string &&dateOfArrival = "None", std::string &&dateOfDeparture = "None");
+    //move constructor
+    Booking( const Customer& customer = Customer(), std::string &&dateOfArrival = "None", std::string &&dateOfDeparture = "None") noexcept;
+
     ~Booking();
 };
 

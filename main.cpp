@@ -17,11 +17,11 @@ void findCustomerByID(std::vector<Customer> &customers, int customerID) {
 }
 
 int main() {
-
     Apartment apartment1("Comfort", 201, 3, 5000);
     Apartment apartment2("Lux",502,6,12000);
     Apartment apartment3("Basic",121,2,2500);
     apartment1.getApartmentInfo();
+    apartment2.getApartmentInfo();
 
     vector<Customer> customers;
     Customer customer1("Katia",100456,18,"+380984563433");
