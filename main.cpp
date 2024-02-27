@@ -2,6 +2,7 @@
 #include "Apartment.h"
 #include "Customer.h"
 #include "Booking.h"
+#include "Hotel.h"
 using namespace std;
 
 void findCustomerByID(std::vector<Customer> &customers, int customerID) {
@@ -38,6 +39,9 @@ int main() {
     Booking booking1(&customer1,"13.02.2024","18.02.2024");
     Booking booking2(&customer2,"26.02.2024","01.03.2024");
     Booking booking3(&customer3,"15.03.2023","20.03.2024");
+
+    Hotel hotel1("Hotel1", 20,"Regular");
+    cout<<hotel1;
 
     return 0;
 }

@@ -24,6 +24,7 @@ std::istream &operator >> (std::istream &is, Hotel &other){
     is >> other.numberOfApartments;
     std::cout << "Enter ranking: " << std::endl;
     is >> other.ranking;
+    return is;
 }
 Hotel::~Hotel() {
     numberOfHotels--;
