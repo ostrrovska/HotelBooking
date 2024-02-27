@@ -1,6 +1,3 @@
-//
-// Created by ACER on 26.02.2024.
-//
 
 #ifndef RESTAURANTBOOKING_HOTEL_H
 #define RESTAURANTBOOKING_HOTEL_H
@@ -13,11 +10,14 @@ private:
     std::string ranking;
 public:
     static int numberOfHotels;
-    //оголошення конструктору
     Hotel();
     Hotel(const std::string &name, int apartments, const std::string &rank);
-   ~Hotel();
+
+    friend std::ostream &operator <<(std::ostream &os, Hotel &other);
+    friend std::istream &operator >>(std::istream &is, Hotel &other);
+
     int showApartments();
+   ~Hotel();
 
 };
 
