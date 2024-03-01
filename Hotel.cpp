@@ -11,6 +11,10 @@ Hotel::Hotel(const std::string &name, int apartments, const std::string &rank)
     : hotelName{name},numberOfApartments{apartments},ranking{rank} {
     numberOfHotels++;
 }
+Hotel::Hotel(const std::string &name)
+: hotelName{name}{
+    numberOfHotels++;
+}
 std::ostream &operator <<(std::ostream &os, Hotel &other) {
     os << "Hotel name: " << other.hotelName << std::endl
        << "Number of apartments: " << other.numberOfApartments << std::endl

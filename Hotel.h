@@ -4,13 +4,14 @@
 #include <string>
 
 class Hotel {
-private:
+public:
     std::string hotelName;
     int numberOfApartments;
     std::string ranking;
-public:
     static int numberOfHotels;
+
     Hotel();
+    Hotel(const std::string &name);
     Hotel(const std::string &name, int apartments, const std::string &rank);
 
     friend std::ostream &operator <<(std::ostream &os, Hotel &other);

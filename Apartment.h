@@ -2,20 +2,21 @@
 #ifndef RESTAURANTBOOKING_APARTMENT_H
 #define RESTAURANTBOOKING_APARTMENT_H
 #include <string>
+#include "Hotel.h"
 
-class Apartment {
-private:
+class Apartment: public Hotel{
+public:
     std::string typeOfApartment;
     int apartmentNumber;
     int numberOfRooms;
     int price;
-public:
     void getApartmentInfo(); //function to show information about specific apartment
     Apartment();
-    Apartment(const std::string &typeOfApartment);
-    Apartment(const std::string &typeOfApartment,int apartmentNumber);
-    Apartment(const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms);
-    Apartment(const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms,int price);
+    Apartment(const std::string &hotelName);
+    Apartment(const std::string &hotelName, const std::string &typeOfApartment);
+    Apartment(const std::string &hotelName, const std::string &typeOfApartment,int apartmentNumber);
+    Apartment(const std::string &hotelName, const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms);
+    Apartment(const std::string &hotelName, const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms,int price);
     ~Apartment();
 
 
