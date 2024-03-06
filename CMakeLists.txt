@@ -11,4 +11,6 @@ add_executable(RestaurantBooking main.cpp
         Booking.cpp
         Booking.h
         Hotel.cpp
-        Hotel.h)
+        Hotel.h
+        VIPCustomer.cpp
+        VIPCustomer.h)

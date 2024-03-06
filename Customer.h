@@ -8,10 +8,9 @@
 #include <vector>
 
 class Customer {
-private:
+public:
     int age;
     std::string phoneNumber;
-public:
     std::string customerName;
     int customerID;
     //constructor by default
