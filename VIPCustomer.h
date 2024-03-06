@@ -6,6 +6,8 @@
 class VIPCustomer: public Customer {
 public:
     std::string vipStatus;
+    VIPCustomer( std::string &&customerName = "None", int customerID = 0, int age = 0, std::string &&phoneNumber = "None",std::string &&status = "None");
+    ~VIPCustomer();
 };
 
 

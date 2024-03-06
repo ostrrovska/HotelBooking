@@ -3,6 +3,7 @@
 #include "Customer.h"
 #include "Booking.h"
 #include "Hotel.h"
+#include "VIPCustomer.h"
 using namespace std;
 
 void findCustomerByID(std::vector<Customer> &customers, int customerID) {
@@ -28,9 +29,12 @@ int main() {
     Customer customer1("Katia",100456,18,"+380984563433");
     Customer customer2("Maria",205677,17,"+380675554342");
     Customer customer3("Nazar",690087,18,"+380985674462");
+    VIPCustomer customer4("Olha",468900,20,"+380675554728","Gold");
+
     customers.emplace_back(customer1);
     customers.emplace_back(customer2);
     customers.emplace_back(customer3);
+    customers.emplace_back(customer4);
 
     string idToFind;
     getline(cin,idToFind);
