@@ -4,7 +4,7 @@
 VIPCustomer::VIPCustomer(std::string &&customerName, int customerID, int age, std::string &&phoneNumber, std::string &&status)
     : Customer{customerName, customerID, age, phoneNumber}, vipStatus{status} {}
 VIPCustomer::VIPCustomer(const Customer &customer)
-    : VIPCustomer{customer, "Silver"}{}
+    : VIPCustomer{customer, "Silver"}{} //default VIP status
 VIPCustomer::VIPCustomer(const Customer &customer, const std::string &status)
-    : Customer{customer},vipStatus{status}{}
+    : Customer{customer},vipStatus{status}{} //non-defalt VIP status
 VIPCustomer::~VIPCustomer(){}
