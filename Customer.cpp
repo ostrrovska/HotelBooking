@@ -2,7 +2,7 @@
 #include <iostream>
 
 //constructor with default
-Customer::Customer(std::string &&customerName, int customerID, int age, std::string &&phoneNumber)
+Customer::Customer(const std::string &customerName, int customerID, int age, const std::string &phoneNumber)
 : customerName{customerName},customerID{customerID}, age{age},phoneNumber{phoneNumber}{}
 
 //copy constructor

@@ -2,5 +2,9 @@
 #include "VIPCustomer.h"
 
 VIPCustomer::VIPCustomer(std::string &&customerName, int customerID, int age, std::string &&phoneNumber, std::string &&status)
-        : Customer(std::move(customerName), customerID, age, std::move(phoneNumber)), vipStatus(std::move(status)) {}
+    : Customer{customerName, customerID, age, phoneNumber}, vipStatus{status} {}
+VIPCustomer::VIPCustomer(const Customer &customer)
+    : VIPCustomer{customer, "Silver"}{}
+VIPCustomer::VIPCustomer(const Customer &customer, const std::string &status)
+    : Customer{customer},vipStatus{status}{}
 VIPCustomer::~VIPCustomer(){}

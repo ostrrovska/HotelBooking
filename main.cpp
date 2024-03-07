@@ -30,6 +30,8 @@ int main() {
     Customer customer2("Maria",205677,17,"+380675554342");
     Customer customer3("Nazar",690087,18,"+380985674462");
     VIPCustomer customer4("Olha",468900,20,"+380675554728","Gold");
+    VIPCustomer customer5(customer1);
+    VIPCustomer customer6(customer1, "Slut");
 
     customers.emplace_back(customer1);
     customers.emplace_back(customer2);
