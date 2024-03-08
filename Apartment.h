@@ -17,6 +17,8 @@ public:
     Apartment(const std::string &hotelName, const std::string &typeOfApartment,int apartmentNumber);
     Apartment(const std::string &hotelName, const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms);
     Apartment(const std::string &hotelName, const std::string &typeOfApartment,int apartmentNumber,int numberOfRooms,int price);
+    //implemented move constructor
+    Apartment(Apartment &&other) noexcept;
     ~Apartment();
 
 

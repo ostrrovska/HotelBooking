@@ -13,11 +13,13 @@ public:
     Hotel();
     Hotel(const std::string &name);
     Hotel(const std::string &name, int apartments, const std::string &rank);
+    //move constructor
+    Hotel(Hotel &&other) noexcept;
 
     friend std::ostream &operator <<(std::ostream &os, Hotel &other);
     friend std::istream &operator >>(std::istream &is, Hotel &other);
 
-    int showApartments();
+
    ~Hotel();
 
 };

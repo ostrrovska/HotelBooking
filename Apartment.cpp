@@ -25,7 +25,9 @@ Apartment::Apartment(const std::string &hotelName,const std::string &typeOfApart
         : Apartment{hotelName, typeOfApartment, apartmentNumber, numberOfRooms, 0} {}
 Apartment::Apartment(const std::string &hotelName, const std::string &typeOfApartment, int apartmentNumber, int numberOfRooms, int price)
         : Hotel{hotelName}, typeOfApartment{typeOfApartment}, apartmentNumber{apartmentNumber}, numberOfRooms{numberOfRooms}, price{price} {}
-
+        //implemented move constructor
+Apartment::Apartment(Apartment &&other) noexcept
+        : Hotel{std::move(other)}, typeOfApartment{other.typeOfApartment}, apartmentNumber{other.apartmentNumber}, numberOfRooms{other.numberOfRooms}, price{other.price}{}
 Apartment::~Apartment() {std::cout << "Destructor called for apartment: " << this->apartmentNumber << std::endl;}//використання this
 
 

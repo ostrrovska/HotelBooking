@@ -15,6 +15,9 @@ Hotel::Hotel(const std::string &name)
 : hotelName{name}{
     numberOfHotels++;
 }
+//move constructor
+Hotel::Hotel(Hotel &&other) noexcept
+        : hotelName{other.hotelName},numberOfApartments{other.numberOfApartments},ranking{other.ranking}{}
 std::ostream &operator <<(std::ostream &os, Hotel &other) {
     os << "Hotel name: " << other.hotelName << std::endl
        << "Number of apartments: " << other.numberOfApartments << std::endl
