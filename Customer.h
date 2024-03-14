@@ -18,8 +18,6 @@ public:
     //copy constructor
     Customer(const Customer &other);
     ~Customer();
-
-
 };
 
 

@@ -49,6 +49,6 @@ std::istream &operator >> (std::istream &is, Hotel &other){
     is >> other.ranking;
     return is;
 }
-Hotel::~Hotel() {
+ Hotel::~Hotel() {
     numberOfHotels--;
 }
