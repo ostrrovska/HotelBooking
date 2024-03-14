@@ -7,12 +7,16 @@ Hotel::Hotel()
 : Hotel{"None", 0, "None"}{
     numberOfHotels++;
 }
-Hotel::Hotel(const std::string &name, int apartments, const std::string &rank)
-    : hotelName{name},numberOfApartments{apartments},ranking{rank} {
+//Hotel::Hotel(const std::string &name, int apartments, const std::string &rank)
+//    : hotelName{name},numberOfApartments{apartments},ranking{rank} {
+//    numberOfHotels++;
+//}
+Hotel::Hotel(const std::string &hotelName, int numberOfApartments, const std::string &ranking)
+    :hotelName{hotelName},numberOfApartments{numberOfApartments},ranking{ranking} {
     numberOfHotels++;
 }
-Hotel::Hotel(const std::string &name)
-: hotelName{name}{
+Hotel::Hotel(const std::string &hotelName)
+: hotelName{hotelName}{
     numberOfHotels++;
 }
 //move constructor

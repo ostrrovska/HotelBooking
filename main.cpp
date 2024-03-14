@@ -22,7 +22,7 @@ int main() {
     vector <Apartment> apartments;
     Apartment apartment1("Hotel1","type1",1009,3,400);
     Apartment apartment2("hotel2");
-    apartments.push_back(apartment1);
+    Apartment apartment3("Hotel3","Lux");
     apartment1.getApartmentInfo();
     apartment2.getApartmentInfo();
 

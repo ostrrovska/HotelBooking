@@ -11,8 +11,9 @@ public:
     static int numberOfHotels;
 
     Hotel();
-    Hotel(const std::string &name);
-    Hotel(const std::string &name, int apartments, const std::string &rank);
+    Hotel(const std::string &hotelName = "None", int numberOfApartments = 0, const std::string &ranking = "None");
+    Hotel(const std::string &hotelName = "None");
+    //Hotel(const std::string &name, int apartments, const std::string &rank);
     //move constructor
     Hotel(Hotel &&other) noexcept;
     //copy constructor
