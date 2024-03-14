@@ -2,7 +2,11 @@
 #include "Hotel.h"
 #include <iostream>
 int Hotel::numberOfHotels = 0;
-
+void Hotel::displayInfo() const {
+    std::cout << "Hotel name: "<< hotelName << std::endl;
+    std::cout << "Number of apartments: " << numberOfApartments << std::endl;
+    std::cout << "Ranking" << ranking << std::endl;
+}
 Hotel::Hotel()
 : Hotel{"None", 0, "None"}{
     numberOfHotels++;
@@ -21,10 +25,14 @@ Hotel::Hotel(const std::string &hotelName)
 }
 //move constructor
 Hotel::Hotel(Hotel &&other) noexcept
-    : hotelName{other.hotelName},numberOfApartments{other.numberOfApartments},ranking{other.ranking}{}
+    : hotelName{other.hotelName},numberOfApartments{other.numberOfApartments},ranking{other.ranking}{
+    numberOfHotels++;
+}
 //copy constructor
 Hotel::Hotel(const Hotel &other)
-    : hotelName{other.hotelName},numberOfApartments{other.numberOfApartments},ranking(other.ranking){}
+    : hotelName{other.hotelName},numberOfApartments{other.numberOfApartments},ranking(other.ranking){
+    numberOfHotels++;
+}
 
 std::ostream &operator <<(std::ostream &os, Hotel &other) {
     os << "Hotel name: " << other.hotelName << std::endl

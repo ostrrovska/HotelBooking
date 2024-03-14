@@ -2,14 +2,15 @@
 #ifndef RESTAURANTBOOKING_HOTEL_H
 #define RESTAURANTBOOKING_HOTEL_H
 #include <string>
+#include "Description.h"
 
-class Hotel {
+class Hotel:public Description {
 public:
     std::string hotelName;
     int numberOfApartments;
     std::string ranking;
     static int numberOfHotels;
-
+    virtual void displayInfo() const override;
     Hotel();
     Hotel(const std::string &hotelName = "None", int numberOfApartments = 0, const std::string &ranking = "None");
     Hotel(const std::string &hotelName = "None");

@@ -1,14 +1,20 @@
 #include "Apartment.h"
 #include <iostream>
 
-void Apartment::getApartmentInfo() {
+//void Apartment::getApartmentInfo() {
+//    std::cout << "Hotel name: " << hotelName <<std::endl;
+//    std::cout << "Type of apartment: " << typeOfApartment << std::endl;
+//    std::cout << "Apartment number: " << apartmentNumber << std::endl;
+//    std::cout << "Number of rooms: " << numberOfRooms << std::endl;
+//    std:: cout << "Price: " << price << std::endl;
+//}
+void Apartment::displayInfo() const {
     std::cout << "Hotel name: " << hotelName <<std::endl;
     std::cout << "Type of apartment: " << typeOfApartment << std::endl;
     std::cout << "Apartment number: " << apartmentNumber << std::endl;
     std::cout << "Number of rooms: " << numberOfRooms << std::endl;
     std:: cout << "Price: " << price << std::endl;
 }
-
 void Apartment::showApartments(std::vector<Apartment> &apartments) {
     for (const auto &apartment : apartments) {
         std::cout << "Hotel Name: " << apartment.hotelName << std::endl;

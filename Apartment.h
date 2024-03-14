@@ -11,7 +11,9 @@ public:
     int apartmentNumber;
     int numberOfRooms;
     int price;
-    void getApartmentInfo(); //function to show information about specific apartment
+
+    virtual void displayInfo() const override;
+    //void getApartmentInfo(); //function to show information about specific apartment
     Apartment();
     Apartment(const std::string &hotelName);
     Apartment(const std::string &hotelName, const std::string &typeOfApartment);
