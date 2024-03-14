@@ -44,7 +44,3 @@ std::istream &operator >> (std::istream &is, Hotel &other){
 Hotel::~Hotel() {
     numberOfHotels--;
 }
-
-int Hotel::showApartments() {
-
-}

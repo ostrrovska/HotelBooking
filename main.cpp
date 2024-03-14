@@ -17,15 +17,19 @@ void findCustomerByID(std::vector<Customer> &customers, int customerID) {
     }
     if(!isFound) cout <<"Invalid ID"<<endl;
 }
-
 int main() {
     vector <Apartment> apartments;
-    Apartment apartment1("Hotel1","type1",1009,3,400);
-    Apartment apartment2("hotel2");
-    Apartment apartment3("Hotel3","Lux");
+    Apartment apartment1("Hotel1","Comfort",1009,3,400);
+    Apartment apartment2("hotel2","Lux",2013,5,1000);
+    Apartment apartment3("Hotel3","Lux",2014,6,900);
+    apartments.emplace_back ("Hotel1", "Comfort", 1009, 3, 400);
+    apartments.emplace_back ("Hotel2", "Lux", 2013, 5, 1000);
+    Apartment::showApartments(apartments);
+
+    //apartments.emplace_back(apartment1);
     apartment1.getApartmentInfo();
     apartment2.getApartmentInfo();
-
+    apartment3.getApartmentInfo();
 
     vector<Customer> customers;
     Customer customer1("Katia",100456,18,"+380984563433");

@@ -3,6 +3,7 @@
 #define RESTAURANTBOOKING_APARTMENT_H
 #include <string>
 #include "Hotel.h"
+#include <vector>
 
 class Apartment: public Hotel{
 public:
@@ -20,6 +21,7 @@ public:
     //Apartment(const std::string &hotelName, const std::string &typeOfApartment, int apartmentNumber, int numberOfRooms, int price);
     //implemented move constructor
     Apartment(Apartment &&other) noexcept;
+    void static showApartments(std::vector<Apartment> &apartments);//function to show all apartments
     ~Apartment();
 
 

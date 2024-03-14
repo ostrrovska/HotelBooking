@@ -22,9 +22,6 @@ public:
     friend std::ostream &operator <<(std::ostream &os, Hotel &other);
     friend std::istream &operator >>(std::istream &is, Hotel &other);
 
-    int showApartments();
-
-
    ~Hotel();
 
 };
