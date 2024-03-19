@@ -1,7 +1,8 @@
-
 #include "Hotel.h"
+#include "Apartment.h"
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 
 int Hotel::numberOfHotels = 0;
 
@@ -11,9 +12,15 @@ void Hotel::displayInfo() const {
     std::cout << "Ranking" << ranking << std::endl;
 }
 Hotel Hotel::downloadHotelInfo(const std::string &filename) {
-    std::ifstream fileToRead("Hotels/"+filename+"/"+filename+".txt", std::ifstream::out); //open
-    std::string currentLine;
+    std::string path = "Hotels/"+filename+"/";
     Hotel hotel;
+    for(const auto &file : std::filesystem::directory_iterator("Hotels/"+filename)){
+        if(file.path().filename().string() != filename+".txt"){// check if not hotel
+            hotel.apartments.emplace_back(Apartment::downloadApartmentInfo(file.path().filename().string(),path));
+        }
+    }
+    std::ifstream fileToRead(path+filename+".txt", std::ifstream::out); //open
+    std::string currentLine;
     getline(fileToRead, currentLine);
     hotel.hotelName = currentLine;
     getline(fileToRead, currentLine);
@@ -35,16 +42,18 @@ Hotel::Hotel()
 //    numberOfHotels++;
 //}
 Hotel::Hotel(const std::string &hotelName, int numberOfApartments, const std::string &ranking)
-    :hotelName{hotelName},numberOfApartments{numberOfApartments},ranking{ranking},information{""} {
+    :hotelName{hotelName},numberOfApartments{numberOfApartments},ranking{ranking},information{""},apartments{} {
     numberOfHotels++;
 }
 //move constructor
 Hotel::Hotel(Hotel &&other) noexcept
-    : hotelName{other.hotelName},numberOfApartments{other.numberOfApartments},ranking{other.ranking},information{other.information}{
+    : hotelName{other.hotelName},numberOfApartments{other.numberOfApartments},ranking{other.ranking},
+    information{other.information}, apartments{other.apartments}{
 }
 //copy constructor
 Hotel::Hotel(const Hotel &other)
-    : hotelName{other.hotelName},numberOfApartments{other.numberOfApartments},ranking{other.ranking},information{other.information}{
+    : hotelName{other.hotelName},numberOfApartments{other.numberOfApartments},ranking{other.ranking},
+    information{other.information},apartments{other.apartments}{
     numberOfHotels++;
 }
 

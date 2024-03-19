@@ -2,10 +2,10 @@
 #ifndef RESTAURANTBOOKING_APARTMENT_H
 #define RESTAURANTBOOKING_APARTMENT_H
 #include <string>
-#include "Hotel.h"
 #include <vector>
+#include "Description.h"
 
-class Apartment: public Hotel{
+class Apartment: public Description{
 public:
     std::string typeOfApartment;
     int apartmentNumber;
@@ -13,6 +13,8 @@ public:
     int price;
 
     virtual void displayInfo() const override;
+    static Apartment downloadApartmentInfo(const std::string &filename, const std::string &path);
+    void static showApartments(std::vector<Apartment> &apartments);//function to show all apartments
     //void getApartmentInfo(); //function to show information about specific apartment
     Apartment();
     Apartment(const std::string &hotelName);
@@ -23,7 +25,7 @@ public:
     //Apartment(const std::string &hotelName, const std::string &typeOfApartment, int apartmentNumber, int numberOfRooms, int price);
     //implemented move constructor
     Apartment(Apartment &&other) noexcept;
-    void static showApartments(std::vector<Apartment> &apartments);//function to show all apartments
+    Apartment(const Apartment &apartment);
     ~Apartment();
 
 
