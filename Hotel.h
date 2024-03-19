@@ -6,14 +6,16 @@
 
 class Hotel:public Description {
 public:
+
     std::string hotelName;
     int numberOfApartments;
     std::string ranking;
+    std::string information;
     static int numberOfHotels;
     virtual void displayInfo() const override;
+    static Hotel downloadHotelInfo(const std::string &filename);
     Hotel();
-    Hotel(const std::string &hotelName = "None", int numberOfApartments = 0, const std::string &ranking = "None");
-    Hotel(const std::string &hotelName = "None");
+    Hotel(const std::string &hotelName, int numberOfApartments, const std::string &ranking);
     //Hotel(const std::string &name, int apartments, const std::string &rank);
     //move constructor
     Hotel(Hotel &&other) noexcept;
