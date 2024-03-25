@@ -75,7 +75,5 @@ Apartment::Apartment(const Apartment &apartment)
           numberOfRooms{apartment.numberOfRooms}, price{apartment.price} {};
 
 Apartment::~Apartment() {
-    std::cout << "Destructor called for apartment: " << this->apartmentNumber << std::endl;
-}//використання this
-
+}
 

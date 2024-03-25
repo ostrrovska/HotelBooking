@@ -15,8 +15,11 @@ public:
     std::string information;
     static int numberOfHotels;
     std::vector<Apartment> apartments;
+
     virtual void displayInfo() const override;
     static Hotel downloadHotelInfo(const std::string &filename);
+    void printHotels(const Hotel &hotel);
+
     Hotel();
     Hotel(const std::string &hotelName, int numberOfApartments, const std::string &ranking);
     //Hotel(const std::string &name, int apartments, const std::string &rank);
