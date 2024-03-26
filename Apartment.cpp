@@ -17,7 +17,6 @@ void Apartment::displayInfo() const {
 }
 
 Apartment Apartment::downloadApartmentInfo(const std::string &filename, const std::string &path) {
-    std::cout << path + filename;
     std::ifstream fileToRead(path + filename, std::ifstream::out);
     std::string currentLine;
     Apartment apartment;

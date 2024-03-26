@@ -18,7 +18,8 @@ public:
 
     virtual void displayInfo() const override;
     static Hotel downloadHotelInfo(const std::string &filename);
-    void printHotels(const Hotel &hotel);
+    void printHotel();
+    void printApartments();
 
     Hotel();
     Hotel(const std::string &hotelName, int numberOfApartments, const std::string &ranking);

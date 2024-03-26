@@ -34,11 +34,16 @@ Hotel Hotel::downloadHotelInfo(const std::string &filename) {
 
     return hotel;
 }
-void Hotel::printHotels(const Hotel &hotel)  {
-    std::cout << std::endl;
-    std::cout << "Hotel Name: " << hotelName << std::endl;
+void Hotel::printHotel() {
+    std::cout << "Name: " << hotelName << std::endl;
     std::cout << "Ranking: " << ranking << std::endl;
     std::cout << "Information: " << information << std::endl;
+}
+void Hotel::printApartments() {
+    for(Apartment &a : apartments)
+    {
+        a.displayInfo();
+    }
 }
 Hotel::Hotel()
 : Hotel{"None", 0, "None"}{
