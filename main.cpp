@@ -6,7 +6,7 @@
 #include "VIPCustomer.h"
 #include <filesystem>
 #include <memory>
-#include <random>
+#include <ctime>
 
 namespace fs = std::filesystem;
 using namespace std;
@@ -24,6 +24,7 @@ void findCustomerByID(std::vector<Customer> &customers, int customerID) {
 }
 
 int main() {
+    srand(time(NULL));
     fs::create_directory("Hotels");
     fs::create_directory("Customers");
     try {
@@ -37,6 +38,7 @@ int main() {
     getline(cin, command);
     vector<unique_ptr<Hotel>> hotels;
     vector<unique_ptr<Customer>> customers;
+    vector<unique_ptr<VIPCustomer>> vipCustomers;
     if (command == "admin") {
     } else {
         M:
@@ -67,13 +69,40 @@ int main() {
             cout << "Chosen hotel: " << currentHotel.hotelName << endl;
             cout << "Chosen suite: " << currentApartment.typeOfApartment <<"("<<currentApartment.price << " GRN" << ")" << endl;
             cout << "Please, fill in the following information: " << endl;
-            Customer customer;
-            cout << "Your name: ";
-            getline(std::cin, customer.customerName);
-            cout << "Phone number: ";
-            getline(std::cin, customer.phoneNumber);
-            cout << "Your age: ";
-            cin >> customer.age;
+            if(currentApartment.typeOfApartment == "Luxury"){
+                VIPCustomer *vipCustomer = new VIPCustomer();
+                cout << "Your name: ";
+                getline(std::cin, vipCustomer->customerName);
+                cout << "Phone number: ";
+                getline(std::cin, vipCustomer->phoneNumber);
+                cout << "Your age: ";
+                cin >> vipCustomer->age;
+                vipCustomer->customerID = rand()%1000000 + 100000;
+                if(currentApartment.price >= 3000 && currentApartment.price < 5000) {
+                    vipCustomer->vipStatus = "Silver";
+                    cout << "Congratulations! Now you are the VIP with silver status!";
+                }
+                else if (currentApartment.price >= 5000 && currentApartment.price < 10000){
+                    vipCustomer->vipStatus = "Gold";
+                    cout << "Congratulations! Now you are the VIP with gold status!";
+                }
+                else if (currentApartment.price >= 10000){
+                    vipCustomer->vipStatus = "Diamond";
+                    cout << "Congratulations! Now you are the VIP with diamond status!";
+                }
+                vipCustomers.emplace_back(vipCustomer);
+            }
+            else{
+                Customer *customer = new Customer();
+                cout << "Your name: ";
+                getline(std::cin, customer->customerName);
+                cout << "Phone number: ";
+                getline(std::cin, customer->phoneNumber);
+                cout << "Your age: ";
+                cin >> customer->age;
+                customer->customerID = rand()%1000000 + 100000;
+                customers.emplace_back(customer);
+            }
         }
         else{
             goto M;
