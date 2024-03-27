@@ -102,6 +102,8 @@ int main() {
                 cin >> customer->age;
                 customer->customerID = rand()%1000000 + 100000;
                 customers.emplace_back(customer);
+                std::string path = "Customers/RegularCustomers";
+                customer->writeCustomerToFile(customer, path);
             }
         }
         else{
