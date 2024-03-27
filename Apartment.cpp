@@ -13,7 +13,7 @@ void Apartment::displayInfo() const {
     std::cout << "Type of apartment: " << typeOfApartment << std::endl;
     std::cout << "Apartment number: " << apartmentNumber << std::endl;
     std::cout << "Number of rooms: " << numberOfRooms << std::endl;
-    std::cout << "Price: " << price << std::endl;
+    std::cout << "Price: " << price << " GRN" << std::endl;
 }
 
 Apartment Apartment::downloadApartmentInfo(const std::string &filename, const std::string &path) {
@@ -32,15 +32,15 @@ Apartment Apartment::downloadApartmentInfo(const std::string &filename, const st
     return apartment;
 }
 
-void Apartment::showApartments(std::vector<Apartment> &apartments) {
-    for (const auto &apartment: apartments) {
-        std::cout << "Type of Apartment: " << apartment.typeOfApartment << std::endl;
-        std::cout << "Apartment Number: " << apartment.apartmentNumber << std::endl;
-        std::cout << "Number of Rooms: " << apartment.numberOfRooms << std::endl;
-        std::cout << "Price: " << apartment.price << std::endl;
-        std::cout << "                               " << std::endl;
-    }
-}
+//void Apartment::showApartments(std::vector<Apartment> &apartments) {
+//    for (const auto &apartment: apartments) {
+//        std::cout << "Type of Apartment: " << apartment.typeOfApartment << std::endl;
+//        std::cout << "Apartment Number: " << apartment.apartmentNumber << std::endl;
+//        std::cout << "Number of Rooms: " << apartment.numberOfRooms << std::endl;
+//        std::cout << "Price: " << apartment.price << std::endl;
+//        std::cout << "                               " << std::endl;
+//    }
+//}
 
 Apartment::Apartment()
         : Apartment{"None", "None", 0, 0, 0} {} //делегування

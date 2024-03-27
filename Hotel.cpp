@@ -40,9 +40,13 @@ void Hotel::printHotel() {
     std::cout << "Information: " << information << std::endl;
 }
 void Hotel::printApartments() {
+    int i = 1;
     for(Apartment &a : apartments)
     {
+        std::cout << i << ".";
         a.displayInfo();
+        std::cout << std::endl;
+        i++;
     }
 }
 Hotel::Hotel()

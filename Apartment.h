@@ -4,17 +4,20 @@
 #include <string>
 #include <vector>
 #include "Description.h"
+#include "Customer.h"
 
 class Apartment: public Description{
 public:
+    Customer customer;
     std::string typeOfApartment;
     int apartmentNumber;
     int numberOfRooms;
     int price;
+    bool isTaken;
 
     virtual void displayInfo() const override;
     static Apartment downloadApartmentInfo(const std::string &filename, const std::string &path);
-    void static showApartments(std::vector<Apartment> &apartments);//function to show all apartments
+    //void static showApartments(std::vector<Apartment> &apartments);//function to show all apartments
     //void getApartmentInfo(); //function to show information about specific apartment
     Apartment();
     Apartment(const std::string &hotelName);
