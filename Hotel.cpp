@@ -43,10 +43,12 @@ void Hotel::printApartments() {
     int i = 1;
     for(Apartment &a : apartments)
     {
-        std::cout << i << ".";
-        a.displayInfo();
-        std::cout << std::endl;
-        i++;
+        if(!a.isTaken){
+            std::cout << i << ".";
+            a.displayInfo();
+            std::cout << std::endl;
+            i++;
+        }
     }
 }
 Hotel::Hotel()

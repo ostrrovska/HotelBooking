@@ -13,13 +13,13 @@ public:
     int age;
     std::string phoneNumber;
     int customerID;
-    void writeCustomerToFile(const Customer *customer, std::string &path);
+    virtual void writeCustomerToFile(const Customer &customer, std::string &path);
     //constructor by default
     Customer(const std::string &customerName = "None", int customerID = 0, int age = 0, const std::string &phoneNumber = "None");
     //copy constructor
     Customer(const Customer &other);
 //    static Customer downloadCustomerInfo(const std::string &filename);
-    ~Customer();
+    virtual ~Customer();
 };
 
 

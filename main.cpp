@@ -57,42 +57,45 @@ int main() {
         std::cout << "Please, enter the number of the hotel you would like to choose: ";
         getline(std::cin, command);
         Hotel currentHotel = *hotels[std::stoi(command) - 1];
+        Apartment currentApartment = currentHotel.apartments[stoi(command) - 1];
         currentHotel.printApartments();
         std::cout << "Choose the apartment suitable for your needs: ";
         getline(std::cin, command);
-        Apartment currentApartment = currentHotel.apartments[stoi(command) - 1];
+        currentHotel.apartments[stoi(command)-1].isTaken = true;
+        //Apartment currentApartment = currentHotel.apartments[stoi(command) - 1];
         cout << "Great! You have chosen " << currentApartment.typeOfApartment << " suite " << "in "
              << currentHotel.hotelName << "! Press 1 to confirm booking or 2 to reselect the hotel" << endl;
         getline(std::cin, command);
-        if( stoi(command) == 1){
+        if (stoi(command) == 1) {
             cout << "----------BOOKING CONFIRMATION----------" << endl;
             cout << "Chosen hotel: " << currentHotel.hotelName << endl;
-            cout << "Chosen suite: " << currentApartment.typeOfApartment <<"("<<currentApartment.price << " GRN" << ")" << endl;
+            cout << "Chosen suite: " << currentApartment.typeOfApartment << "(" << currentApartment.price << " GRN"
+                 << ")" << endl;
             cout << "Please, fill in the following information: " << endl;
-            if(currentApartment.typeOfApartment == "Luxury"){
+            if (currentApartment.typeOfApartment == "Luxury") {
                 VIPCustomer *vipCustomer = new VIPCustomer();
+
                 cout << "Your name: ";
                 getline(std::cin, vipCustomer->customerName);
                 cout << "Phone number: ";
                 getline(std::cin, vipCustomer->phoneNumber);
                 cout << "Your age: ";
                 cin >> vipCustomer->age;
-                vipCustomer->customerID = rand()%1000000 + 100000;
-                if(currentApartment.price >= 3000 && currentApartment.price < 5000) {
+                vipCustomer->customerID = rand() % 1000000 + 100000;
+                if (currentApartment.price >= 3000 && currentApartment.price < 5000) {
                     vipCustomer->vipStatus = "Silver";
                     cout << "Congratulations! Now you are the VIP with silver status!";
-                }
-                else if (currentApartment.price >= 5000 && currentApartment.price < 10000){
+                } else if (currentApartment.price >= 5000 && currentApartment.price < 10000) {
                     vipCustomer->vipStatus = "Gold";
                     cout << "Congratulations! Now you are the VIP with gold status!";
-                }
-                else if (currentApartment.price >= 10000){
+                } else if (currentApartment.price >= 10000) {
                     vipCustomer->vipStatus = "Diamond";
                     cout << "Congratulations! Now you are the VIP with diamond status!";
                 }
                 vipCustomers.emplace_back(vipCustomer);
-            }
-            else{
+                std::string path = "Customers/VIPCustomers";
+                vipCustomer->writeCustomerToFile(*vipCustomer, path);
+            } else {
                 Customer *customer = new Customer();
                 cout << "Your name: ";
                 getline(std::cin, customer->customerName);
@@ -100,13 +103,14 @@ int main() {
                 getline(std::cin, customer->phoneNumber);
                 cout << "Your age: ";
                 cin >> customer->age;
-                customer->customerID = rand()%1000000 + 100000;
+                customer->customerID = rand() % 1000000 + 100000;
                 customers.emplace_back(customer);
                 std::string path = "Customers/RegularCustomers";
-                customer->writeCustomerToFile(customer, path);
+                customer->writeCustomerToFile(*customer, path);
+
+
             }
-        }
-        else{
+        } else {
             goto M;
         }
 
