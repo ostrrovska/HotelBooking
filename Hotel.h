@@ -17,6 +17,7 @@ public:
     std::vector<Apartment> apartments;
 
     virtual void displayInfo() const override;
+    void writeHotelToFile(const Hotel &hotel, std::string &path);
     static Hotel downloadHotelInfo(const std::string &filename);
     void printHotel();
     void printApartments();

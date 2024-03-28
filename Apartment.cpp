@@ -15,12 +15,12 @@ void Apartment::displayInfo() const {
     std::cout << "Number of rooms: " << numberOfRooms << std::endl;
     std::cout << "Price: " << price << " GRN" << std::endl;
 }
-void Apartment::writeApartmentToFile(const Apartment &apartment, std::string &path, int index) {
+void Apartment::writeApartmentToFile(std::string &path, int index) {
     std::ofstream writeToFile(path + "Apartment" + std::to_string(index) + ".txt", std::ostream::out);
-    writeToFile << "Type of apartment: " << apartment.typeOfApartment << std::endl;
-    writeToFile << "Apartment number: " << apartment.apartmentNumber << std::endl;
-    writeToFile << "Number of rooms: " << apartment.numberOfRooms << std::endl;
-    writeToFile << "Price: " << apartment.price;
+    writeToFile << "Type of apartment: " << typeOfApartment << std::endl;
+    writeToFile << "Apartment number: " << apartmentNumber << std::endl;
+    writeToFile << "Number of rooms: " << numberOfRooms << std::endl;
+    writeToFile << "Price: " << price;
     writeToFile.close();
 }
 Apartment Apartment::downloadApartmentInfo(const std::string &filename, const std::string &path) {
