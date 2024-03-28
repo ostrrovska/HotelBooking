@@ -16,7 +16,7 @@ public:
     bool isTaken;
 
     virtual void displayInfo() const override;
-    void writeApartmenttoFile(const Apartment &apartment, std::string path);
+    void writeApartmentToFile(const Apartment &apartment, std::string &path, int index);
     static Apartment downloadApartmentInfo(const std::string &filename, const std::string &path);
     //void static showApartments(std::vector<Apartment> &apartments);//function to show all apartments
     //void getApartmentInfo(); //function to show information about specific apartment

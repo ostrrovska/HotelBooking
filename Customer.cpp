@@ -7,16 +7,12 @@
 //    std::string path = "Customers/"+filename+"/";
 //}
 void Customer::writeCustomerToFile(const Customer &customer, std::string &path) {
-    std::string path1 = "Customers/RegularCustomers";
+    //std::string path1 = "Customers/RegularCustomers";
     std::ofstream writeToFile(path + "/Customer" + std::to_string(customer.customerID) + ".txt");//id as a name
-    if (writeToFile.is_open()) {
         writeToFile << "Name: " << customer.customerName << std::endl;
         writeToFile << "Phone number: " << customer.phoneNumber << std::endl;
         writeToFile << "Age: " << customer.age << std::endl;
         writeToFile.close();
-    } else {
-        std::cerr << "Unable to open file" << std::endl;
-    }
 }
 
 //constructor with default
