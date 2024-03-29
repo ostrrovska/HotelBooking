@@ -11,14 +11,14 @@ void Hotel::displayInfo() const {
     std::cout << "Number of apartments: " << numberOfApartments << std::endl;
     std::cout << "Ranking" << ranking << std::endl;
 }
-void Hotel::writeHotelToFile(const Hotel &hotel, std::string &path) {
-    std::ofstream writeToFile(path + hotel.hotelName + ".txt", std::ostream::out);
-    for(int i = 0; i < hotel.apartments.size(); i++){
+void Hotel::writeHotelToFile(std::string &path) {
+    std::ofstream writeToFile(path + hotelName + ".txt", std::ostream::out);
+    for(int i = 0; i < apartments.size(); i++){
         apartments[i].writeApartmentToFile(path, i);
     }
-    writeToFile << "Hotel name: " << hotel.hotelName;
-    writeToFile << "Ranking: " << hotel.ranking;
-    writeToFile << "Information: " << hotel.information;
+    writeToFile << hotelName << std::endl;
+    writeToFile << ranking<< std::endl;
+    writeToFile << information << std::endl;
     writeToFile.close();
 }
 Hotel Hotel::downloadHotelInfo(const std::string &filename) {

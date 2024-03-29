@@ -17,10 +17,11 @@ void Apartment::displayInfo() const {
 }
 void Apartment::writeApartmentToFile(std::string &path, int index) {
     std::ofstream writeToFile(path + "Apartment" + std::to_string(index) + ".txt", std::ostream::out);
-    writeToFile << "Type of apartment: " << typeOfApartment << std::endl;
-    writeToFile << "Apartment number: " << apartmentNumber << std::endl;
-    writeToFile << "Number of rooms: " << numberOfRooms << std::endl;
-    writeToFile << "Price: " << price;
+    writeToFile <<  typeOfApartment << std::endl;
+    writeToFile <<  apartmentNumber << std::endl;
+    writeToFile <<  numberOfRooms << std::endl;
+    writeToFile <<  price << std::endl;
+    writeToFile << isTaken << std::endl;
     writeToFile.close();
 }
 Apartment Apartment::downloadApartmentInfo(const std::string &filename, const std::string &path) {
@@ -35,6 +36,8 @@ Apartment Apartment::downloadApartmentInfo(const std::string &filename, const st
     apartment.numberOfRooms = std::stoi(currentLine);
     getline(fileToRead, currentLine);
     apartment.price = std::stoi(currentLine);
+    getline(fileToRead, currentLine);
+    apartment.isTaken = static_cast<bool>(std::stoi(currentLine));
     fileToRead.close();
     return apartment;
 }
@@ -74,11 +77,11 @@ Apartment::Apartment(const std::string &hotelName, const std::string &typeOfApar
 //implemented move constructor
 Apartment::Apartment(Apartment &&other) noexcept
         : typeOfApartment{other.typeOfApartment}, apartmentNumber{other.apartmentNumber},
-          numberOfRooms{other.numberOfRooms}, price{other.price} {}
+          numberOfRooms{other.numberOfRooms}, price{other.price}, isTaken{other.isTaken} {}
 
 Apartment::Apartment(const Apartment &apartment)
         : typeOfApartment{apartment.typeOfApartment}, apartmentNumber{apartment.apartmentNumber},
-          numberOfRooms{apartment.numberOfRooms}, price{apartment.price} {};
+          numberOfRooms{apartment.numberOfRooms}, price{apartment.price}, isTaken{apartment.isTaken} {};
 
 Apartment::~Apartment() {
 }
