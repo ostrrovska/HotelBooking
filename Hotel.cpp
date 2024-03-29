@@ -29,7 +29,6 @@ Hotel Hotel::downloadHotelInfo(const std::string &filename) {
             hotel.apartments.emplace_back(Apartment::downloadApartmentInfo(file.path().filename().string(),path));
         }
     }
-
     std::ifstream fileToRead(path+filename+".txt", std::ifstream::out); //open
     std::string currentLine;
     getline(fileToRead, currentLine);
@@ -41,7 +40,6 @@ Hotel Hotel::downloadHotelInfo(const std::string &filename) {
         hotel.information += currentLine;
     }
     fileToRead.close();
-
     return hotel;
 }
 void Hotel::printHotel() {

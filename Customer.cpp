@@ -14,7 +14,6 @@ void Customer::writeCustomerToFile(const Customer &customer, std::string &path) 
         writeToFile << "Age: " << customer.age << std::endl;
         writeToFile.close();
 }
-
 //constructor with default
 Customer::Customer(const std::string &customerName, int customerID, int age, const std::string &phoneNumber)
         : customerName{customerName}, customerID{customerID}, age{age}, phoneNumber{phoneNumber} {}
